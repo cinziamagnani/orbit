@@ -8,10 +8,12 @@ let volumeBtn = document.getElementById("volume");
 let finalCard = document.getElementById("card");
 let parFinalCard = document.getElementById("been-on");
 let replay = document.getElementById("replay-button");
+let start = document.getElementById("start-button");
+let stopBtn = document.getElementById("stop-button");
 
 let result = 0;
 let hitPosition;
-let currentTime = 10;
+let currentTime;
 let timerId = null;
 
 muteBtn.onclick = function mute() {
@@ -24,6 +26,22 @@ volumeBtn.onclick = function unmute() {
     audio.muted = false;
     muteBtn.classList.remove('d-none');
     volumeBtn.classList.add('d-none');
+}
+
+start.onclick = function playGame() {
+    currentTime = 60;
+     countDownTimerId = setInterval(countDown, 1000);
+    movePlanet();
+    stopBtn.classList.remove('d-none');
+    start.classList.add('d-none');
+}
+
+stopBtn.onclick = function stopGame() {
+clearInterval(countDownTimerId);
+clearInterval(timerId);
+start.classList.remove('d-none');
+stopBtn.classList.add('d-none');
+timeLeft.innerHTML = 00;
 }
 
 replay.onclick = function replayGame() {
@@ -59,8 +77,6 @@ function movePlanet() {
         timerId = setInterval(randomPlanet, 800);
 }
 
-movePlanet();
-
 function countDown() {
 currentTime --
 timeLeft.textContent = currentTime;
@@ -69,7 +85,7 @@ if (currentTime == 0) {
     clearInterval(timerId);
     finalCard.classList.remove('d-none');
     parFinalCard.innerHTML = `You've been on ${result} planets`;
+    start.classList.remove('d-none');
+    stopBtn.classList.add('d-none');
 }
 }
-
-let countDownTimerId = setInterval(countDown, 1000);
