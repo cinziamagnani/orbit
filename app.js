@@ -2,6 +2,21 @@ const planets = document.querySelectorAll('.planet');
 const landed = document.querySelector('.landed');
 const timeLeft = document.querySelector('#timeLeft');
 const score = document.querySelector('#score');
+let audio = new Audio('media/spaceship.mp3');
+let muteBtn = document.getElementById("mute");
+let volumeBtn = document.getElementById("volume");
+
+muteBtn.onclick = function mute() {
+    audio.muted = true;
+    volumeBtn.classList.remove('d-none');
+    muteBtn.classList.add('d-none');
+}
+
+volumeBtn.onclick = function unmute() {
+    audio.muted = false;
+    muteBtn.classList.remove('d-none');
+    volumeBtn.classList.add('d-none');
+}
 
 let result = 0;
 let hitPosition;
@@ -25,6 +40,7 @@ planets.forEach(planet => {
             result++;
             score.innerHTML = result;
             hitPosition = null;
+            audio.play();   
         }
     })
 })
