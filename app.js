@@ -7,6 +7,12 @@ let muteBtn = document.getElementById("mute");
 let volumeBtn = document.getElementById("volume");
 let finalCard = document.getElementById("card");
 let parFinalCard = document.getElementById("been-on");
+let replay = document.getElementById("replay-button");
+
+let result = 0;
+let hitPosition;
+let currentTime = 10;
+let timerId = null;
 
 muteBtn.onclick = function mute() {
     audio.muted = true;
@@ -20,10 +26,12 @@ volumeBtn.onclick = function unmute() {
     volumeBtn.classList.add('d-none');
 }
 
-let result = 0;
-let hitPosition;
-let currentTime = 10;
-let timerId = null;
+replay.onclick = function replayGame() {
+    finalCard.classList.add('d-none');
+    currentTime = 60;
+    countDownTimerId = setInterval(countDown, 1000);
+    movePlanet();
+}
 
 function randomPlanet() {
     planets.forEach(planet => {
@@ -48,7 +56,7 @@ planets.forEach(planet => {
 })
 
 function movePlanet() {
-    timerId = setInterval(randomPlanet, 800);
+        timerId = setInterval(randomPlanet, 800);
 }
 
 movePlanet();
