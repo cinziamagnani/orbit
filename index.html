@@ -13,7 +13,48 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hello world</h1>
+    <div class="Orbit">
+        <div class="row">
+        <h2 class="col-6">
+            Time left:
+            <br />
+             <span id="timeLeft">00</span>
+        </h2>
+        <h2 class="col-6">
+            Score:
+            <br />
+            <span id="score">0</span>
+        </h2>
+        </div>
+        <div class="row">
+            <div class="col-2">
+            <h1>
+            Orbit
+        </h1>
+        <button class="btn btn-light" id="start-button">
+            Start
+        </button>
+            </div>
+            <div class="planets col-10">
+            <div class="row">
+                <div class="planet col-4 landed small" id="1"></div>
+                <div class="planet col-4 smaller" id="2"></div>
+                <div class="planet col-4 smallest" id="3"></div>
+            </div>
+            <div class="row">
+                <div class="planet col-4 medium-small" id="4"></div>
+                <div class="planet col-4 medium" id="5"></div>
+                <div class="planet col-4 medium-large" id="6"></div>
+            </div>
+            <div class="row">
+                <div class="planet col-4 largest" id="7"></div>
+                <div class="planet col-4 larger" id="8"></div>
+                <div class="planet col-4 large" id="9"></div>
+            </div>
+        </div>
+        </div>
+        
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
