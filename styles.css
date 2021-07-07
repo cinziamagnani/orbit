@@ -19,11 +19,11 @@ body {
 .Orbit .icon {
     color: var(--main-light-color);
     font-size: 25px;
-    padding: 20px 0 0 30px;
+    padding: 50px 0 0 30px;
 }
 .Orbit h2 {
     text-align: center;
-    padding-top: 80px;
+    padding-top: 10px;
     font-size: 40px;
     line-height: 72px;
 }
@@ -128,3 +128,31 @@ body {
     margin-top: 60px;
 }
 
+.Orbit .card {
+    background: linear-gradient(135deg, rgba(255, 255, 255,0.4), rgba(255, 255, 255,0.1));
+backdrop-filter: blur( 8.0px );
+-webkit-backdrop-filter: blur( 12.0px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+display: block;
+margin: 0 auto;
+position: absolute;
+top: 200px;
+width: 600px;
+left: 430px;
+}
+
+.Orbit .card .btn-light {
+    display: block;
+    margin: 40px auto;
+}
+
+.Orbit .card h2 {
+    padding: 20px 0;
+}
+
+.Orbit .card p {
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+}

@@ -5,6 +5,8 @@ const score = document.querySelector('#score');
 let audio = new Audio('media/spaceship.mp3');
 let muteBtn = document.getElementById("mute");
 let volumeBtn = document.getElementById("volume");
+let finalCard = document.getElementById("card");
+let parFinalCard = document.getElementById("been-on");
 
 muteBtn.onclick = function mute() {
     audio.muted = true;
@@ -20,7 +22,7 @@ volumeBtn.onclick = function unmute() {
 
 let result = 0;
 let hitPosition;
-let currentTime = 60;
+let currentTime = 10;
 let timerId = null;
 
 function randomPlanet() {
@@ -57,7 +59,8 @@ timeLeft.textContent = currentTime;
 if (currentTime == 0) {
     clearInterval(countDownTimerId);
     clearInterval(timerId);
-    alert('GAME OVER! Your final score is ' + result);
+    finalCard.classList.remove('d-none');
+    parFinalCard.innerHTML = `You've been on ${result} planets`;
 }
 }
 
