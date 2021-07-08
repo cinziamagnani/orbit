@@ -16,6 +16,8 @@ let hitPosition;
 let currentTime;
 let timerId = null;
 
+// on-off btn for sound effects when scoring a point
+
 muteBtn.onclick = function mute() {
     audio.muted = true;
     volumeBtn.classList.remove('d-none');
@@ -27,6 +29,8 @@ volumeBtn.onclick = function unmute() {
     muteBtn.classList.remove('d-none');
     volumeBtn.classList.add('d-none');
 }
+
+// play-stop-resume btns for game
 
 start.onclick = function playGame() {
     currentTime = 60;
@@ -50,6 +54,8 @@ replay.onclick = function replayGame() {
     countDownTimerId = setInterval(countDown, 1000);
     movePlanet();
 }
+
+// select random planet and play whac-a-mole game
 
 function randomPlanet() {
     planets.forEach(planet => {
@@ -76,6 +82,8 @@ planets.forEach(planet => {
 function movePlanet() {
         timerId = setInterval(randomPlanet, 800);
 }
+
+// game timer + final score card
 
 function countDown() {
 currentTime --
