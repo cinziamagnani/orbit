@@ -13,5 +13,5 @@ It was created using HTML, CSS and JavaScript. Bootstrap was also using for styl
 
 If you wish to play this game or better see how it works, visit: <https://spaceorbit.netlify.app/>
 
-**How to play:**
+**How to play:** <br />
 When you enter the web page, press start to activate the random planet selector and timer. <br /> Hit as many planets as possible when they fill up!  <br /> If you wish to deactivate the sound, simply press the audio button.  <br /> If you want it back on, press the button again. <br />  If you stop the game by pressing the "Stop" button, the timer will be reset to 60 seconds.  <br /> At the end, a card will appear with your final score. Press "Play again" to continue playing.
